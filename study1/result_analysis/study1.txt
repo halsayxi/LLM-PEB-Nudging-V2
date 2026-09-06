@@ -400,7 +400,7 @@ False                             2            8          6
 True                              7           19         27
 
 Type of experiment chi-square:
-chi2 = 3.587626406612256, dof = 3, p = 0.30957383414394435, min expected cell = 1.6231884057971016
+chi2 = 3.587626406612256, dof = 3, p = 0.30957383414394396, min expected cell = 1.6231884057971016
 type_experiment          artefactual_field  conventional_lab  framed_field  natural_field
 deepseekv4flash_success                                                                  
 False                                    9                 5             1              1
@@ -422,8 +422,8 @@ structure      81.8
 Success rates by intervention technique (%):
 intervention_technique
 composition         100.0
-consequence         100.0
 effort              100.0
+consequence         100.0
 visibility          100.0
 commitment           83.3
 default              79.3
@@ -441,13 +441,13 @@ natural_field        1
 Failures by intervention technique:
 intervention_technique
 default             6
-social_reference    4
 translation         4
+social_reference    4
 commitment          1
 reminder            1
-composition         0
-consequence         0
 effort              0
+consequence         0
+composition         0
 visibility          0
 
 DeepSeek-V4-Flash-Think technique-level descriptive summary:
