@@ -1,0 +1,268 @@
+Study 2: Human vs. LLM replication analysis
+
+Model: claude-haiku-4-5-20251001
+
+Group: information_high
+  Effect-size trajectory correlation: r = 0.1094, p = 0.7097, n = 14
+  Short-term replication success (Day 1): success (100%)
+  Long-term replication success (Day 14): success (100%)
+Group: information_medium
+  Effect-size trajectory correlation: r = 0.1738, p = 0.5524, n = 14
+  Short-term replication success (Day 1): success (100%)
+  Long-term replication success (Day 14): success (100%)
+Group: information_low
+  Effect-size trajectory correlation: r = 0.2957, p = 0.3047, n = 14
+  Short-term replication success (Day 1): success (100%)
+  Long-term replication success (Day 14): success (100%)
+Group: assistant_high
+  Effect-size trajectory correlation: r = -0.1529, p = 0.6732, n = 10
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): failure (0%)
+Group: assistant_medium
+  Effect-size trajectory correlation: r = 0.3473, p = 0.2237, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): failure (0%)
+Group: assistant_low
+  Effect-size trajectory correlation: r = 0.6561, p = 0.0108, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): failure (0%)
+Group: structure_high
+  Effect-size trajectory correlation: r = 0.2826, p = 0.3275, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): failure (0%)
+Group: structure_medium
+  Effect-size trajectory correlation: r = 0.9024, p = 0.0000, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): failure (0%)
+Group: structure_low
+  Effect-size trajectory correlation: r = 0.5602, p = 0.0372, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): success (100%)
+
+Overall human-LLM Pearson correlation: r = 0.3405, p = 0.0001, n = 122
+Overall short-term replication rate: 3/9 (33.33%)
+Overall long-term replication rate: 4/9 (44.44%)
+
+Model: deepseek-v3
+
+Group: information_high
+  Effect-size trajectory correlation: r = -0.2825, p = 0.3278, n = 14
+  Short-term replication success (Day 1): success (100%)
+  Long-term replication success (Day 14): success (100%)
+Group: information_medium
+  Effect-size trajectory correlation: r = 0.2525, p = 0.3838, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): failure (0%)
+Group: information_low
+  Effect-size trajectory correlation: r = 0.5563, p = 0.0388, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): success (100%)
+Group: assistant_high
+  Effect-size trajectory correlation: r = -0.5002, p = 0.0685, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): failure (0%)
+Group: assistant_medium
+  Effect-size trajectory correlation: r = 0.2335, p = 0.4217, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): success (100%)
+Group: assistant_low
+  Effect-size trajectory correlation: r = 0.5614, p = 0.0367, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): success (100%)
+Group: structure_high
+  Effect-size trajectory correlation: r = -0.7358, p = 0.0027, n = 14
+  Short-term replication success (Day 1): success (100%)
+  Long-term replication success (Day 14): failure (0%)
+Group: structure_medium
+  Effect-size trajectory correlation: r = 0.3941, p = 0.1633, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): failure (0%)
+Group: structure_low
+  Effect-size trajectory correlation: r = 0.5128, p = 0.0608, n = 14
+  Short-term replication success (Day 1): success (100%)
+  Long-term replication success (Day 14): success (100%)
+
+Overall human-LLM Pearson correlation: r = 0.2607, p = 0.0032, n = 126
+Overall short-term replication rate: 3/9 (33.33%)
+Overall long-term replication rate: 5/9 (55.56%)
+
+Model: deepseek-v4-flash
+
+Group: information_high
+  Effect-size trajectory correlation: r = -0.1899, p = 0.5155, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): failure (0%)
+Group: information_medium
+  Effect-size trajectory correlation: r = -0.0031, p = 0.9917, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): success (100%)
+Group: information_low
+  Effect-size trajectory correlation: r = 0.7658, p = 0.0014, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): success (100%)
+Group: assistant_high
+  Effect-size trajectory correlation: r = 0.0942, p = 0.7486, n = 14
+  Short-term replication success (Day 1): success (100%)
+  Long-term replication success (Day 14): failure (0%)
+Group: assistant_medium
+  Effect-size trajectory correlation: r = 0.2543, p = 0.3803, n = 14
+  Short-term replication success (Day 1): success (100%)
+  Long-term replication success (Day 14): success (100%)
+Group: assistant_low
+  Effect-size trajectory correlation: r = 0.7735, p = 0.0012, n = 14
+  Short-term replication success (Day 1): success (100%)
+  Long-term replication success (Day 14): success (100%)
+Group: structure_high
+  Effect-size trajectory correlation: r = 0.1917, p = 0.5114, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): failure (0%)
+Group: structure_medium
+  Effect-size trajectory correlation: r = 0.8447, p = 0.0001, n = 14
+  Short-term replication success (Day 1): success (100%)
+  Long-term replication success (Day 14): failure (0%)
+Group: structure_low
+  Effect-size trajectory correlation: r = 0.7003, p = 0.0053, n = 14
+  Short-term replication success (Day 1): success (100%)
+  Long-term replication success (Day 14): failure (0%)
+
+Overall human-LLM Pearson correlation: r = 0.4535, p = 0.0000, n = 126
+Overall short-term replication rate: 5/9 (55.56%)
+Overall long-term replication rate: 4/9 (44.44%)
+
+Model: gpt-3.5-turbo-0125
+
+Group: information_high
+  Effect-size trajectory correlation: r = 0.0331, p = 0.9106, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): failure (0%)
+Group: information_medium
+  Effect-size trajectory correlation: r = 0.3303, p = 0.2488, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): success (100%)
+Group: information_low
+  Effect-size trajectory correlation: r = 0.6821, p = 0.0072, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): failure (0%)
+Group: assistant_high
+  Effect-size trajectory correlation: r = -0.1457, p = 0.6191, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): failure (0%)
+Group: assistant_medium
+  Effect-size trajectory correlation: r = 0.1150, p = 0.6955, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): failure (0%)
+Group: assistant_low
+  Effect-size trajectory correlation: r = 0.6933, p = 0.0060, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): failure (0%)
+Group: structure_high
+  Effect-size trajectory correlation: r = 0.0054, p = 0.9855, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): failure (0%)
+Group: structure_medium
+  Effect-size trajectory correlation: r = 0.8289, p = 0.0002, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): success (100%)
+Group: structure_low
+  Effect-size trajectory correlation: r = 0.6440, p = 0.0129, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): success (100%)
+
+Overall human-LLM Pearson correlation: r = 0.3594, p = 0.0000, n = 126
+Overall short-term replication rate: 0/9 (0.00%)
+Overall long-term replication rate: 3/9 (33.33%)
+
+Model: gpt-4o-2024-11-20
+
+Group: information_high
+  Effect-size trajectory correlation: r = -0.0679, p = 0.8175, n = 14
+  Short-term replication success (Day 1): success (100%)
+  Long-term replication success (Day 14): failure (0%)
+Group: information_medium
+  Effect-size trajectory correlation: r = 0.0485, p = 0.8693, n = 14
+  Short-term replication success (Day 1): success (100%)
+  Long-term replication success (Day 14): success (100%)
+Group: information_low
+  Effect-size trajectory correlation: r = -0.0213, p = 0.9424, n = 14
+  Short-term replication success (Day 1): success (100%)
+  Long-term replication success (Day 14): failure (0%)
+Group: assistant_high
+  Effect-size trajectory correlation: r = -0.0985, p = 0.7375, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): failure (0%)
+Group: assistant_medium
+  Effect-size trajectory correlation: r = 0.2186, p = 0.4528, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): failure (0%)
+Group: assistant_low
+  Effect-size trajectory correlation: r = 0.7283, p = 0.0031, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): success (100%)
+Group: structure_high
+  Effect-size trajectory correlation: r = -0.4253, p = 0.1295, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): failure (0%)
+Group: structure_medium
+  Effect-size trajectory correlation: r = 0.7284, p = 0.0031, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): success (100%)
+Group: structure_low
+  Effect-size trajectory correlation: r = 0.7220, p = 0.0035, n = 14
+  Short-term replication success (Day 1): success (100%)
+  Long-term replication success (Day 14): success (100%)
+
+Overall human-LLM Pearson correlation: r = 0.3826, p = 0.0000, n = 126
+Overall short-term replication rate: 4/9 (44.44%)
+Overall long-term replication rate: 4/9 (44.44%)
+
+Model: gpt-5.4
+
+Group: information_high
+  Effect-size trajectory correlation: r = 0.3763, p = 0.1849, n = 14
+  Short-term replication success (Day 1): success (100%)
+  Long-term replication success (Day 14): success (100%)
+Group: information_medium
+  Effect-size trajectory correlation: r = 0.0741, p = 0.8012, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): failure (0%)
+Group: information_low
+  Effect-size trajectory correlation: r = 0.8131, p = 0.0004, n = 14
+  Short-term replication success (Day 1): success (100%)
+  Long-term replication success (Day 14): failure (0%)
+Group: assistant_high
+  Effect-size trajectory correlation: r = -0.2184, p = 0.4531, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): failure (0%)
+Group: assistant_medium
+  Effect-size trajectory correlation: r = 0.3885, p = 0.1698, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): failure (0%)
+Group: assistant_low
+  Effect-size trajectory correlation: r = 0.7085, p = 0.0046, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): failure (0%)
+Group: structure_high
+  Effect-size trajectory correlation: r = -0.1191, p = 0.6850, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): failure (0%)
+Group: structure_medium
+  Effect-size trajectory correlation: r = 0.7682, p = 0.0013, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): failure (0%)
+Group: structure_low
+  Effect-size trajectory correlation: r = 0.6979, p = 0.0055, n = 14
+  Short-term replication success (Day 1): failure (0%)
+  Long-term replication success (Day 14): failure (0%)
+
+Overall human-LLM Pearson correlation: r = 0.5854, p = 0.0000, n = 126
+Overall short-term replication rate: 2/9 (22.22%)
+Overall long-term replication rate: 1/9 (11.11%)
+
+Model-level Pearson summary
+model | pearson_r | pearson_p | valid_pairs
+claude-haiku-4-5-20251001 | 0.3405 | 0.0001 | 122
+deepseek-v3 | 0.2607 | 0.0032 | 126
+deepseek-v4-flash | 0.4535 | 0.0000 | 126
+gpt-3.5-turbo-0125 | 0.3594 | 0.0000 | 126
+gpt-4o-2024-11-20 | 0.3826 | 0.0000 | 126
+gpt-5.4 | 0.5854 | 0.0000 | 126

@@ -1,0 +1,464 @@
+=== Overall Success Summary ===
+                  Model  N (evaluable)  Success (n)  Success rate (%)
+                GPT-3.5             69           43              62.3
+                 GPT-4o             69           50              72.5
+       Claude-4.5-Haiku             69           41              59.4
+            DeepSeek-V3             69           48              69.6
+DeepSeek-V4-Flash-Think             69           53              76.8
+          GPT-5.4-Think             69           43              62.3
+
+=== Success / Failure Study IDs by Model ===
+--- GPT-3.5 ---
+Success (43):
+Arana_1, Bamberg_1, Bamberg_2, Bamberg_3, Bohm_1, Broman_1, Broman_3, Camilleri_2, Camilleri_3, Camilleri_4, Catlin_1, Chabeferret_1, Demarque_6, Dickerson_1, Dinner_1, Dinner_2, Dinner_3, Everett_1, Gong_1, Handgraaf_1, Hershfield_1, Kuester_2, Lofgren_2, Marek_1, McCaul_1, McCaul_2, Meng_1, Mertens_1, Mertens_2, Mertens_3, Mertens_5, Nelson_1, Nelson_2, Nelson_3, Pichert_1, Pichert_2, Shealy_1, Shealy_2, Stikvoort_1, Theotokis_1, Theotokis_2, Yeomans_2, Yeomans_3
+Failure (26):
+Broman_2, Bruns_1, Camilleri_1, Demarque_1, Demarque_2, Demarque_3, Demarque_4, Demarque_5, Demarque_7, Demarque_8, Dickerson_2, Ebeling_1, Ebeling_2, Hedlin_1, Hedlin_2, Hilton_1, Kesternich_1, Klotz_1, Klotz_2, Kuester_1, Larrick_1, Lofgren_1, Mertens_4, Rosenkranz_1, Shealy_3, Yeomans_1
+
+--- GPT-4o ---
+Success (50):
+Arana_1, Bamberg_2, Bohm_1, Broman_1, Broman_3, Bruns_1, Camilleri_3, Camilleri_4, Catlin_1, Chabeferret_1, Demarque_1, Demarque_2, Demarque_3, Demarque_5, Demarque_6, Dickerson_1, Dickerson_2, Dinner_1, Dinner_2, Dinner_3, Everett_1, Gong_1, Handgraaf_1, Hedlin_1, Hershfield_1, Kuester_1, Kuester_2, Larrick_1, Lofgren_2, Marek_1, McCaul_1, McCaul_2, Meng_1, Mertens_1, Mertens_2, Mertens_3, Mertens_4, Mertens_5, Nelson_1, Nelson_2, Nelson_3, Pichert_1, Pichert_2, Shealy_1, Shealy_2, Stikvoort_1, Theotokis_1, Theotokis_2, Yeomans_2, Yeomans_3
+Failure (19):
+Bamberg_1, Bamberg_3, Broman_2, Camilleri_1, Camilleri_2, Demarque_4, Demarque_7, Demarque_8, Ebeling_1, Ebeling_2, Hedlin_2, Hilton_1, Kesternich_1, Klotz_1, Klotz_2, Lofgren_1, Rosenkranz_1, Shealy_3, Yeomans_1
+
+--- Claude-4.5-Haiku ---
+Success (41):
+Arana_1, Bamberg_2, Bohm_1, Broman_1, Broman_3, Camilleri_1, Camilleri_2, Camilleri_3, Camilleri_4, Catlin_1, Chabeferret_1, Demarque_1, Demarque_2, Demarque_3, Demarque_5, Demarque_6, Demarque_7, Dickerson_2, Dinner_1, Dinner_2, Dinner_3, Everett_1, Gong_1, Hershfield_1, Kuester_1, Kuester_2, Marek_1, Mertens_2, Mertens_3, Mertens_4, Mertens_5, Nelson_1, Nelson_2, Nelson_3, Pichert_1, Pichert_2, Shealy_1, Theotokis_1, Theotokis_2, Yeomans_1, Yeomans_2
+Failure (28):
+Bamberg_1, Bamberg_3, Broman_2, Bruns_1, Demarque_4, Demarque_8, Dickerson_1, Ebeling_1, Ebeling_2, Handgraaf_1, Hedlin_1, Hedlin_2, Hilton_1, Kesternich_1, Klotz_1, Klotz_2, Larrick_1, Lofgren_1, Lofgren_2, McCaul_1, McCaul_2, Meng_1, Mertens_1, Rosenkranz_1, Shealy_2, Shealy_3, Stikvoort_1, Yeomans_3
+
+--- DeepSeek-V3 ---
+Success (48):
+Arana_1, Bamberg_1, Bamberg_2, Bamberg_3, Bohm_1, Broman_1, Broman_3, Camilleri_2, Camilleri_3, Camilleri_4, Catlin_1, Chabeferret_1, Demarque_1, Demarque_2, Demarque_3, Demarque_5, Demarque_6, Dinner_1, Dinner_2, Dinner_3, Everett_1, Gong_1, Handgraaf_1, Hedlin_1, Hershfield_1, Kuester_1, Kuester_2, Larrick_1, Lofgren_1, Lofgren_2, Marek_1, McCaul_1, Meng_1, Mertens_1, Mertens_2, Mertens_3, Mertens_4, Mertens_5, Nelson_1, Nelson_2, Nelson_3, Pichert_2, Shealy_1, Stikvoort_1, Theotokis_1, Theotokis_2, Yeomans_2, Yeomans_3
+Failure (21):
+Broman_2, Bruns_1, Camilleri_1, Demarque_4, Demarque_7, Demarque_8, Dickerson_1, Dickerson_2, Ebeling_1, Ebeling_2, Hedlin_2, Hilton_1, Kesternich_1, Klotz_1, Klotz_2, McCaul_2, Pichert_1, Rosenkranz_1, Shealy_2, Shealy_3, Yeomans_1
+
+--- DeepSeek-V4-Flash-Think ---
+Success (53):
+Arana_1, Bamberg_1, Bamberg_2, Bamberg_3, Bohm_1, Broman_1, Broman_3, Camilleri_3, Camilleri_4, Catlin_1, Chabeferret_1, Demarque_1, Demarque_2, Demarque_3, Demarque_5, Demarque_6, Dickerson_1, Dickerson_2, Dinner_1, Dinner_2, Dinner_3, Everett_1, Gong_1, Handgraaf_1, Hedlin_1, Hershfield_1, Kesternich_1, Klotz_1, Kuester_1, Kuester_2, Lofgren_1, Lofgren_2, Marek_1, McCaul_1, Meng_1, Mertens_1, Mertens_2, Mertens_3, Mertens_5, Nelson_1, Nelson_2, Nelson_3, Pichert_1, Pichert_2, Rosenkranz_1, Shealy_1, Shealy_2, Stikvoort_1, Theotokis_1, Theotokis_2, Yeomans_1, Yeomans_2, Yeomans_3
+Failure (16):
+Broman_2, Bruns_1, Camilleri_1, Camilleri_2, Demarque_4, Demarque_7, Demarque_8, Ebeling_1, Ebeling_2, Hedlin_2, Hilton_1, Klotz_2, Larrick_1, McCaul_2, Mertens_4, Shealy_3
+
+--- GPT-5.4-Think ---
+Success (43):
+Arana_1, Bamberg_1, Bamberg_2, Bamberg_3, Bohm_1, Broman_1, Broman_3, Bruns_1, Camilleri_3, Camilleri_4, Catlin_1, Chabeferret_1, Demarque_2, Demarque_6, Dickerson_2, Dinner_1, Dinner_2, Dinner_3, Everett_1, Gong_1, Handgraaf_1, Hedlin_1, Hershfield_1, Kuester_1, Kuester_2, Lofgren_1, Lofgren_2, Marek_1, Meng_1, Mertens_3, Mertens_4, Mertens_5, Nelson_1, Nelson_2, Nelson_3, Pichert_1, Pichert_2, Rosenkranz_1, Shealy_1, Stikvoort_1, Theotokis_1, Yeomans_2, Yeomans_3
+Failure (26):
+Broman_2, Camilleri_1, Camilleri_2, Demarque_1, Demarque_3, Demarque_4, Demarque_5, Demarque_7, Demarque_8, Dickerson_1, Ebeling_1, Ebeling_2, Hedlin_2, Hilton_1, Kesternich_1, Klotz_1, Klotz_2, Larrick_1, McCaul_1, McCaul_2, Mertens_1, Mertens_2, Shealy_2, Shealy_3, Theotokis_2, Yeomans_1
+
+=== Reasoning vs Non-reasoning Summary ===
+  Model group  Success rate (%)  Success (n)  N (evaluable)
+Non-reasoning             65.95         45.5           69.0
+    Reasoning             69.55         48.0           69.0
+
+=== Paired success comparison: non-reasoning vs reasoning model groups ===
+For each study, success was averaged within non-reasoning and reasoning model groups, then compared using paired tests.
+ N studies  Mean non-reasoning success  Mean reasoning success  Mean paired difference  Paired t  Paired p  Wilcoxon W  Wilcoxon p
+        69                       0.659                   0.696                  -0.036    -1.043  0.300532       199.5    0.328355
+
+=== Success Rate by effect_label ===
+                  Model  effect_label  N  Success (n)  Success rate (%)
+                GPT-3.5            -1  3            3             100.0
+                GPT-3.5             0  4            3              75.0
+                GPT-3.5             1 62           37              59.7
+                 GPT-4o            -1  3            3             100.0
+                 GPT-4o             0  4            3              75.0
+                 GPT-4o             1 62           44              71.0
+       Claude-4.5-Haiku            -1  3            2              66.7
+       Claude-4.5-Haiku             0  4            1              25.0
+       Claude-4.5-Haiku             1 62           38              61.3
+            DeepSeek-V3            -1  3            3             100.0
+            DeepSeek-V3             0  4            3              75.0
+            DeepSeek-V3             1 62           42              67.7
+DeepSeek-V4-Flash-Think            -1  3            3             100.0
+DeepSeek-V4-Flash-Think             0  4            3              75.0
+DeepSeek-V4-Flash-Think             1 62           47              75.8
+          GPT-5.4-Think            -1  3            3             100.0
+          GPT-5.4-Think             0  4            2              50.0
+          GPT-5.4-Think             1 62           38              61.3
+
+=== Human effect_label distribution ===
+ effect_label  N
+           -1  3
+            0  4
+            1 62
+
+=== effect_label distribution by intervention_technique ===
+This table shows whether broad categories contain mixes of positive, null, and negative effects.
+intervention_category intervention_technique  effect_label  N
+           assistance             commitment             0  1
+           assistance             commitment             1  5
+           assistance               reminder             1  3
+          information       social_reference            -1  2
+          information       social_reference             0  1
+          information       social_reference             1 10
+          information            translation             0  1
+          information            translation             1 12
+          information             visibility             1  1
+            structure            composition             1  2
+            structure            consequence            -1  1
+            structure                default             0  1
+            structure                default             1 28
+            structure                 effort             1  1
+
+=== Mean Success Rate by effect_label and model group ===
+  Model group  effect_label  Success rate (%)  Success (n)    N
+Non-reasoning            -1            91.675         2.75  3.0
+Non-reasoning             0            62.500         2.50  4.0
+Non-reasoning             1            64.925        40.25 62.0
+    Reasoning            -1           100.000         3.00  3.0
+    Reasoning             0            62.500         2.50  4.0
+    Reasoning             1            68.550        42.50 62.0
+
+=== Pearson Correlation: LLM effect size vs Human effect size ===
+                  Model        r        p  N
+                GPT-3.5 0.332642 0.005228 69
+                 GPT-4o 0.428914 0.000236 69
+       Claude-4.5-Haiku 0.247756 0.040118 69
+            DeepSeek-V3 0.352908 0.002937 69
+DeepSeek-V4-Flash-Think 0.438195 0.000166 69
+          GPT-5.4-Think 0.405021 0.000556 69
+
+=== Paired t-test: LLM effect size vs Human effect size ===
+                  Model  Mean difference (LLM - Human)         t        p  N
+                GPT-3.5                      -0.031739 -0.217052 0.828817 69
+                 GPT-4o                      -0.192945 -1.803698 0.075708 69
+       Claude-4.5-Haiku                      -0.039519 -0.240326 0.810801 69
+            DeepSeek-V3                      -0.205109 -1.746952 0.085161 69
+DeepSeek-V4-Flash-Think                      -0.166394 -2.091325 0.040237 69
+          GPT-5.4-Think                       0.011497  0.081937 0.934938 69
+
+=== Model-type averaged effect correspondence with human effects ===
+Model outputs are averaged within each study separately for non-reasoning and reasoning models.
+       Model group  N  Mean simulated effect size  Mean human effect size  Pearson r  Pearson p  Mean difference (group - human)  Paired t  Paired p
+Non-reasoning LLMs 69                       0.304                   0.421      0.398   0.000706                           -0.117    -1.080  0.284167
+    Reasoning LLMs 69                       0.344                   0.421      0.435   0.000185                           -0.077    -0.746  0.458077
+
+=== intervention_technique composition within broad categories ===
+This table lists the technique subcategories represented in each broad category.
+   Category        Technique  N
+ assistance       commitment  6
+ assistance         reminder  3
+information social_reference 13
+information      translation 13
+information       visibility  1
+  structure          default 29
+  structure      composition  2
+  structure      consequence  1
+  structure           effort  1
+
+=== Human Effect Heterogeneity by intervention_technique ===
+Note: this section is descriptive and meant to show within-category heterogeneity.
+   Category        Technique  N  Mean human effect size  SD human effect size  Min human effect size  Max human effect size
+  structure          default 29                   0.571                 0.392                  0.079                  1.419
+information social_reference 13                   0.308                 0.515                 -0.623                  1.492
+information      translation 13                   0.315                 0.209                  0.036                  0.807
+ assistance       commitment  6                   0.335                 0.195                  0.085                  0.585
+ assistance         reminder  3                   0.335                 0.032                  0.311                  0.371
+  structure      composition  2                   0.376                 0.386                  0.103                  0.649
+information       visibility  1                   0.632                   NaN                  0.632                  0.632
+  structure      consequence  1                  -0.714                   NaN                 -0.714                 -0.714
+  structure           effort  1                   0.712                   NaN                  0.712                  0.712
+
+=== Success Rate by intervention_technique ===
+Note: techniques with very small N should be interpreted cautiously.
+                  Model    Category        Technique  N  Success (n)  Success rate (%)
+       Claude-4.5-Haiku  assistance       commitment  6            1              16.7
+            DeepSeek-V3  assistance       commitment  6            4              66.7
+DeepSeek-V4-Flash-Think  assistance       commitment  6            5              83.3
+                GPT-3.5  assistance       commitment  6            6             100.0
+                 GPT-4o  assistance       commitment  6            4              66.7
+          GPT-5.4-Think  assistance       commitment  6            3              50.0
+       Claude-4.5-Haiku  assistance         reminder  3            1              33.3
+            DeepSeek-V3  assistance         reminder  3            1              33.3
+DeepSeek-V4-Flash-Think  assistance         reminder  3            2              66.7
+                GPT-3.5  assistance         reminder  3            1              33.3
+                 GPT-4o  assistance         reminder  3            2              66.7
+          GPT-5.4-Think  assistance         reminder  3            2              66.7
+       Claude-4.5-Haiku information social_reference 13            9              69.2
+            DeepSeek-V3 information social_reference 13            8              61.5
+DeepSeek-V4-Flash-Think information social_reference 13            9              69.2
+                GPT-3.5 information social_reference 13            4              30.8
+                 GPT-4o information social_reference 13            8              61.5
+          GPT-5.4-Think information social_reference 13            5              38.5
+       Claude-4.5-Haiku information      translation 13           11              84.6
+            DeepSeek-V3 information      translation 13           12              92.3
+DeepSeek-V4-Flash-Think information      translation 13            9              69.2
+                GPT-3.5 information      translation 13           10              76.9
+                 GPT-4o information      translation 13           11              84.6
+          GPT-5.4-Think information      translation 13            8              61.5
+       Claude-4.5-Haiku information       visibility  1            0               0.0
+            DeepSeek-V3 information       visibility  1            1             100.0
+DeepSeek-V4-Flash-Think information       visibility  1            1             100.0
+                GPT-3.5 information       visibility  1            1             100.0
+                 GPT-4o information       visibility  1            1             100.0
+          GPT-5.4-Think information       visibility  1            1             100.0
+       Claude-4.5-Haiku   structure      composition  2            1              50.0
+            DeepSeek-V3   structure      composition  2            2             100.0
+DeepSeek-V4-Flash-Think   structure      composition  2            2             100.0
+                GPT-3.5   structure      composition  2            2             100.0
+                 GPT-4o   structure      composition  2            2             100.0
+          GPT-5.4-Think   structure      composition  2            2             100.0
+       Claude-4.5-Haiku   structure      consequence  1            1             100.0
+            DeepSeek-V3   structure      consequence  1            1             100.0
+DeepSeek-V4-Flash-Think   structure      consequence  1            1             100.0
+                GPT-3.5   structure      consequence  1            1             100.0
+                 GPT-4o   structure      consequence  1            1             100.0
+          GPT-5.4-Think   structure      consequence  1            1             100.0
+       Claude-4.5-Haiku   structure          default 29           17              58.6
+            DeepSeek-V3   structure          default 29           19              65.5
+DeepSeek-V4-Flash-Think   structure          default 29           23              79.3
+                GPT-3.5   structure          default 29           18              62.1
+                 GPT-4o   structure          default 29           21              72.4
+          GPT-5.4-Think   structure          default 29           20              69.0
+       Claude-4.5-Haiku   structure           effort  1            0               0.0
+            DeepSeek-V3   structure           effort  1            0               0.0
+DeepSeek-V4-Flash-Think   structure           effort  1            1             100.0
+                GPT-3.5   structure           effort  1            0               0.0
+                 GPT-4o   structure           effort  1            0               0.0
+          GPT-5.4-Think   structure           effort  1            1             100.0
+
+=== Figure 1d distribution summary: human experiments vs LLM model-type averages ===
+This table matches the boxplot in Fig. 1d: human effect sizes, non-reasoning-model mean simulated effect sizes, and reasoning-model mean simulated effect sizes are summarized within each intervention technique.
+            Source    Category        Technique  N  Mean_effect_size  Median_effect_size  SD_effect_size  Min_effect_size  Max_effect_size
+ Human experiments  assistance       commitment  6             0.335               0.378           0.195            0.085            0.585
+ Human experiments  assistance         reminder  3             0.335               0.322           0.032            0.311            0.371
+ Human experiments information social_reference 13             0.308               0.329           0.515           -0.623            1.492
+ Human experiments information      translation 13             0.315               0.251           0.209            0.036            0.807
+ Human experiments information       visibility  1             0.632               0.632             NaN            0.632            0.632
+ Human experiments   structure      composition  2             0.376               0.376           0.386            0.103            0.649
+ Human experiments   structure      consequence  1            -0.714              -0.714             NaN           -0.714           -0.714
+ Human experiments   structure          default 29             0.571               0.433           0.392            0.079            1.419
+ Human experiments   structure           effort  1             0.712               0.712             NaN            0.712            0.712
+Non-reasoning LLMs  assistance       commitment  6            -0.448              -0.418           0.880           -1.940            0.635
+Non-reasoning LLMs  assistance         reminder  3             0.290               0.532           0.572           -0.363            0.702
+Non-reasoning LLMs information social_reference 13            -0.216               0.221           1.489           -3.063            1.193
+Non-reasoning LLMs information      translation 13             0.237               0.212           0.187           -0.086            0.516
+Non-reasoning LLMs information       visibility  1             1.697               1.697             NaN            1.697            1.697
+Non-reasoning LLMs   structure      composition  2             0.113               0.113           0.370           -0.148            0.375
+Non-reasoning LLMs   structure      consequence  1            -0.241              -0.241             NaN           -0.241           -0.241
+Non-reasoning LLMs   structure          default 29             0.686               0.503           0.851           -0.485            4.118
+Non-reasoning LLMs   structure           effort  1             0.904               0.904             NaN            0.904            0.904
+    Reasoning LLMs  assistance       commitment  6             0.660               0.257           1.263           -0.505            3.063
+    Reasoning LLMs  assistance         reminder  3             0.070              -0.167           0.430           -0.188            0.566
+    Reasoning LLMs information social_reference 13            -0.094               0.204           1.410           -2.464            1.754
+    Reasoning LLMs information      translation 13             0.062               0.106           0.193           -0.379            0.287
+    Reasoning LLMs information       visibility  1             0.677               0.677             NaN            0.677            0.677
+    Reasoning LLMs   structure      composition  2             0.273               0.273           0.533           -0.104            0.650
+    Reasoning LLMs   structure      consequence  1            -0.412              -0.412             NaN           -0.412           -0.412
+    Reasoning LLMs   structure          default 29             0.633               0.384           0.881           -0.512            3.808
+    Reasoning LLMs   structure           effort  1             0.785               0.785             NaN            0.785            0.785
+
+=== Figure 1d distribution summary: heterogeneity across intervention techniques ===
+These statistics summarize how strongly the technique-level distributions differ within human experiments, non-reasoning-model simulations, and reasoning-model simulations using robust dispersion indices.
+            Source  N techniques  Mean-of-means  SD of technique means  IQR of technique means  MAD of technique means  IQR of technique medians
+ Human experiments             9          0.319                  0.416                   0.256                   0.041                     0.111
+Non-reasoning LLMs             9          0.336                  0.672                   0.902                   0.453                     0.419
+    Reasoning LLMs             9          0.295                  0.417                   0.598                   0.367                     0.278
+
+=== Figure 1d Kruskal-Wallis tests across intervention techniques ===
+Kruskal-Wallis tests ask whether effect-size distributions differ across the nine intervention techniques.
+            Source  N techniques  Kruskal H        p
+ Human experiments             9     11.044 0.199200
+Non-reasoning LLMs             9     17.438 0.025859
+    Reasoning LLMs             9     13.516 0.095291
+
+=== Figure 1d inverse-variance weighted technique means ===
+Effect sizes are summarized within each intervention technique using inverse-variance weights.
+            Source    Category        Technique  N  Weighted mean effect size  Total inverse-variance weight
+ Human experiments  assistance       commitment  6                      0.302                        139.779
+ Human experiments  assistance         reminder  3                      0.315                        269.992
+ Human experiments information social_reference 13                      0.039                        336.876
+ Human experiments information      translation 13                      0.284                        716.205
+ Human experiments information       visibility  1                      0.632                          7.622
+ Human experiments   structure      composition  2                      0.350                         62.973
+ Human experiments   structure      consequence  1                     -0.714                         10.101
+ Human experiments   structure          default 29                      1.066                      14656.701
+ Human experiments   structure           effort  1                      0.712                         80.000
+Non-reasoning LLMs  assistance       commitment  6                     -0.275                        495.076
+Non-reasoning LLMs  assistance         reminder  3                     -0.158                       1047.760
+Non-reasoning LLMs information social_reference 13                     -0.110                       1209.926
+Non-reasoning LLMs information      translation 13                      0.198                       2863.614
+Non-reasoning LLMs information       visibility  1                      1.697                         18.594
+Non-reasoning LLMs   structure      composition  2                      0.093                        255.394
+Non-reasoning LLMs   structure      consequence  1                     -0.241                         42.634
+Non-reasoning LLMs   structure          default 29                      0.507                      55986.356
+Non-reasoning LLMs   structure           effort  1                      0.904                        294.548
+    Reasoning LLMs  assistance       commitment  6                      0.316                        259.442
+    Reasoning LLMs  assistance         reminder  3                     -0.058                        540.760
+    Reasoning LLMs information social_reference 13                     -0.167                        606.249
+    Reasoning LLMs information      translation 13                      0.037                       1443.733
+    Reasoning LLMs information       visibility  1                      0.677                         14.389
+    Reasoning LLMs   structure      composition  2                      0.238                        125.864
+    Reasoning LLMs   structure      consequence  1                     -0.412                         20.996
+    Reasoning LLMs   structure          default 29                      0.312                      29580.111
+    Reasoning LLMs   structure           effort  1                      0.785                        156.998
+
+=== Figure 1d inverse-variance weighted heterogeneity summary ===
+Heterogeneity across techniques is summarized with SD, IQR, and MAD of weighted technique means, rather than simple ranges.
+            Source  N techniques  Weighted mean across techniques  SD of weighted technique means  IQR of weighted technique means  MAD of weighted technique means  Weighted dispersion among technique means
+ Human experiments             9                            0.985                           0.494                            0.348                            0.276                                    997.040
+Non-reasoning LLMs             9                            0.463                           0.653                            0.665                            0.334                                   1521.145
+    Reasoning LLMs             9                            0.287                           0.387                            0.375                            0.296                                    350.783
+
+=== Figure 1d weighted variance explained by intervention technique ===
+Weighted eta^2 estimates the proportion of study-level weighted dispersion attributable to intervention technique.
+            Source  N observations  N techniques  Weighted eta^2 for technique  Weighted between-technique SS  Weighted total SS
+ Human experiments              69             9                         0.190                        997.040           5257.326
+Non-reasoning LLMs              69             9                         0.186                       1521.145           8171.643
+    Reasoning LLMs              69             9                         0.139                        350.783           2520.851
+
+=== Figure 1d model-type correspondence with human technique-level heterogeneity ===
+Correlations compare the nine human technique-level means with the corresponding model-type means.
+       Model group  N techniques  Pearson r  Pearson p  Spearman rho  Spearman p
+Non-reasoning LLMs             9      0.587   0.096495         0.778    0.013506
+    Reasoning LLMs             9      0.817   0.007233         0.929    0.000295
+
+=== Figure 1d summary: technique-level mean effects by source ===
+This table compares human and simulated mean effect sizes across the same nine intervention techniques.
+                 Source    Category        Technique  N  Mean effect size
+       Claude-4.5-Haiku  assistance       commitment  6            -1.507
+       Claude-4.5-Haiku  assistance         reminder  3             0.665
+       Claude-4.5-Haiku information social_reference 13             0.140
+       Claude-4.5-Haiku information      translation 13             0.157
+       Claude-4.5-Haiku information       visibility  1             4.572
+       Claude-4.5-Haiku   structure      composition  2             0.041
+       Claude-4.5-Haiku   structure      consequence  1            -0.285
+       Claude-4.5-Haiku   structure          default 29             0.857
+       Claude-4.5-Haiku   structure           effort  1             0.287
+            DeepSeek-V3  assistance       commitment  6            -0.454
+            DeepSeek-V3  assistance         reminder  3            -0.437
+            DeepSeek-V3 information social_reference 13            -0.331
+            DeepSeek-V3 information      translation 13             0.418
+            DeepSeek-V3 information       visibility  1             0.365
+            DeepSeek-V3   structure      composition  2             0.079
+            DeepSeek-V3   structure      consequence  1            -0.273
+            DeepSeek-V3   structure          default 29             0.591
+            DeepSeek-V3   structure           effort  1             0.403
+DeepSeek-V4-Flash-Think  assistance       commitment  6             0.420
+DeepSeek-V4-Flash-Think  assistance         reminder  3             0.095
+DeepSeek-V4-Flash-Think information social_reference 13            -0.328
+DeepSeek-V4-Flash-Think information      translation 13             0.137
+DeepSeek-V4-Flash-Think information       visibility  1             0.016
+DeepSeek-V4-Flash-Think   structure      composition  2             0.234
+DeepSeek-V4-Flash-Think   structure      consequence  1            -0.278
+DeepSeek-V4-Flash-Think   structure          default 29             0.565
+DeepSeek-V4-Flash-Think   structure           effort  1             0.644
+                GPT-3.5  assistance       commitment  6             0.340
+                GPT-3.5  assistance         reminder  3             0.746
+                GPT-3.5 information social_reference 13            -0.165
+                GPT-3.5 information      translation 13             0.165
+                GPT-3.5 information       visibility  1             1.330
+                GPT-3.5   structure      composition  2             0.182
+                GPT-3.5   structure      consequence  1            -0.302
+                GPT-3.5   structure          default 29             0.694
+                GPT-3.5   structure           effort  1             1.070
+                 GPT-4o  assistance       commitment  6            -0.170
+                 GPT-4o  assistance         reminder  3             0.187
+                 GPT-4o information social_reference 13            -0.507
+                 GPT-4o information      translation 13             0.209
+                 GPT-4o information       visibility  1             0.521
+                 GPT-4o   structure      composition  2             0.151
+                 GPT-4o   structure      consequence  1            -0.102
+                 GPT-4o   structure          default 29             0.603
+                 GPT-4o   structure           effort  1             1.855
+          GPT-5.4-Think  assistance       commitment  6             0.901
+          GPT-5.4-Think  assistance         reminder  3             0.046
+          GPT-5.4-Think information social_reference 13             0.140
+          GPT-5.4-Think information      translation 13            -0.014
+          GPT-5.4-Think information       visibility  1             1.338
+          GPT-5.4-Think   structure      composition  2             0.313
+          GPT-5.4-Think   structure      consequence  1            -0.546
+          GPT-5.4-Think   structure          default 29             0.700
+          GPT-5.4-Think   structure           effort  1             0.927
+                  Human  assistance       commitment  6             0.335
+                  Human  assistance         reminder  3             0.335
+                  Human information social_reference 13             0.308
+                  Human information      translation 13             0.315
+                  Human information       visibility  1             0.632
+                  Human   structure      composition  2             0.376
+                  Human   structure      consequence  1            -0.714
+                  Human   structure          default 29             0.571
+                  Human   structure           effort  1             0.712
+
+=== Figure 1d summary: model-human correspondence in technique-level heterogeneity ===
+Correlations compare each model's nine technique-level means with the human technique-level means.
+                  Model  N techniques  Pearson r  Pearson p  Spearman rho  Spearman p
+                GPT-3.5             9      0.739   0.022823         0.887    0.001426
+                 GPT-4o             9      0.518   0.153062         0.778    0.013506
+       Claude-4.5-Haiku             9      0.371   0.325997         0.603    0.085953
+            DeepSeek-V3             9      0.501   0.169792         0.444    0.231784
+DeepSeek-V4-Flash-Think             9      0.629   0.069821         0.678    0.044809
+          GPT-5.4-Think             9      0.795   0.010455         0.854    0.003418
+
+=== DeepSeek-V4-Flash-Think subgroup analysis ===
+n_comparison: success mean = 400.7358490566038, fail mean = 2920.375, t = -0.9654105330904019, p = 0.3494979820038774
+
+Intervention category chi-square:
+chi2 = 1.0980560320182962, dof = 2, p = 0.5775108689855206, min expected cell = 2.0869565217391304
+intervention_category    assistance  information  structure
+deepseekv4flash_success                                    
+False                             2            8          6
+True                              7           19         27
+
+Type of experiment chi-square:
+chi2 = 3.587626406612256, dof = 3, p = 0.30957383414394435, min expected cell = 1.6231884057971016
+type_experiment          artefactual_field  conventional_lab  framed_field  natural_field
+deepseekv4flash_success                                                                  
+False                                    9                 5             1              1
+True                                    17                20            10              6
+
+Intervention technique chi-square:
+chi2 = 2.7666173489815327, dof = 8, p = 0.9481391742711708, min expected cell = 0.2318840579710145
+intervention_technique   commitment  composition  consequence  default  effort  reminder  social_reference  translation  visibility
+deepseekv4flash_success                                                                                                            
+False                             1            0            0        6       0         1                 4            4           0
+True                              5            2            1       23       1         2                 9            9           1
+
+Success rates by category (%):
+intervention_category
+assistance     77.8
+information    70.4
+structure      81.8
+
+Success rates by intervention technique (%):
+intervention_technique
+composition         100.0
+consequence         100.0
+effort              100.0
+visibility          100.0
+commitment           83.3
+default              79.3
+social_reference     69.2
+translation          69.2
+reminder             66.7
+
+Failures by type of experiment:
+type_experiment
+artefactual_field    9
+conventional_lab     5
+framed_field         1
+natural_field        1
+
+Failures by intervention technique:
+intervention_technique
+default             6
+social_reference    4
+translation         4
+commitment          1
+reminder            1
+composition         0
+consequence         0
+effort              0
+visibility          0
+
+DeepSeek-V4-Flash-Think technique-level descriptive summary:
+Note: this table is useful for reviewer-facing interpretation because it shows which techniques have larger/smaller human effects and where DeepSeek-V4-Flash-Think diverges.
+   Category        Technique  N  Mean human effect size  SD human effect size  Min human effect size  Max human effect size  Success (n)  Success rate (%)  Mean LLM effect size  Mean signed effect-size gap  Mean absolute effect-size gap
+  structure          default 29                   0.571                 0.392                  0.079                  1.419           23              79.3                 0.565                       -0.006                          0.353
+information social_reference 13                   0.308                 0.515                 -0.623                  1.492            9              69.2                -0.328                       -0.635                          0.769
+information      translation 13                   0.315                 0.209                  0.036                  0.807            9              69.2                 0.137                       -0.178                          0.260
+ assistance       commitment  6                   0.335                 0.195                  0.085                  0.585            5              83.3                 0.420                        0.084                          0.446
+ assistance         reminder  3                   0.335                 0.032                  0.311                  0.371            2              66.7                 0.095                       -0.240                          0.398
+  structure      composition  2                   0.376                 0.386                  0.103                  0.649            2             100.0                 0.234                       -0.142                          0.142
+information       visibility  1                   0.632                   NaN                  0.632                  0.632            1             100.0                 0.016                       -0.616                          0.616
+  structure      consequence  1                  -0.714                   NaN                 -0.714                 -0.714            1             100.0                -0.278                        0.436                          0.436
+  structure           effort  1                   0.712                   NaN                  0.712                  0.712            1             100.0                 0.644                       -0.068                          0.068

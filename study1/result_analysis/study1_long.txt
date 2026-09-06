@@ -1,0 +1,43 @@
+=== Benchmarking LLMs vs. Long-run Field Experiments ===
+
+=== gpt-3.5-turbo-0125 (gpt35) ===
+Completed studies: 20/20
+Pearson r (human ATE vs. LLM ATE): 0.70, p = 0.000585
+Replication success: 15/20 (75%)
+Failed studies: Allcott_6, Allcott_7, Paunov_1, Paunov_2, Vivek_3
+Missing studies: None
+
+=== deepseek-v3 (deepseekv3) ===
+Completed studies: 20/20
+Pearson r (human ATE vs. LLM ATE): 0.35, p = 0.132
+Replication success: 15/20 (75%)
+Failed studies: Allcott_8, Paunov_6, Vivek_1, Vivek_2, Vivek_3
+Missing studies: None
+
+=== claude-haiku-4-5-20251001 (claudehaiku45) ===
+Completed studies: 20/20
+Pearson r (human ATE vs. LLM ATE): 0.39, p = 0.0855
+Replication success: 10/20 (50%)
+Failed studies: Allcott_1, Allcott_5, Allcott_6, Allcott_7, Paunov_1, Paunov_2, Vivek_1, Vivek_2, Vivek_3, Vivek_5
+Missing studies: None
+
+=== gpt-4o-2024-11-20 (gpt4o) ===
+Completed studies: 20/20
+Pearson r (human ATE vs. LLM ATE): 0.41, p = 0.0759
+Replication success: 8/20 (40%)
+Failed studies: Allcott_1, Allcott_2, Allcott_3, Allcott_4, Paunov_4, Paunov_5, Paunov_6, Vivek_1, Vivek_2, Vivek_3, Vivek_5, Vivek_6
+Missing studies: None
+
+=== deepseek-v4-flash (deepseekv4flash) ===
+Completed studies: 20/20
+Pearson r (human ATE vs. LLM ATE): 0.64, p = 0.00227
+Replication success: 16/20 (80%)
+Failed studies: Allcott_6, Allcott_7, Vivek_2, Vivek_3
+Missing studies: None
+
+=== gpt-5.4 (gpt54) ===
+Completed studies: 20/20
+Pearson r (human ATE vs. LLM ATE): 0.60, p = 0.00531
+Replication success: 10/20 (50%)
+Failed studies: Allcott_6, Allcott_8, Paunov_1, Paunov_3, Paunov_4, Paunov_5, Paunov_6, Vivek_1, Vivek_2, Vivek_3
+Missing studies: None
