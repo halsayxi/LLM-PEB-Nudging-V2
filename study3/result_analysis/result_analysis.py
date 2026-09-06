@@ -10,8 +10,8 @@ from study3_helpers import (
     format_technique_label,
     local_path,
     prepare_day30_study_data,
-    replication_success,
     split_short_term_success_groups,
+    success_mask_for_effect,
 )
 
 
@@ -106,7 +106,99 @@ def recovery_by_technique(recovery_mask):
     )
 
 
-study_df = prepare_day30_study_data()
+BEHAVIOR_DIMENSIONS = [
+    "environmental_context",
+    "economic_cost",
+    "cultural_meaning",
+    "behavior_scrutiny",
+]
+BEHAVIOR_LEVEL_ORDER = {
+    "economic_cost": ["low", "medium", "high"],
+    "cultural_meaning": ["low", "medium", "high"],
+    "behavior_scrutiny": ["low", "medium", "high"],
+}
+
+
+def ordered_levels(df, dimension):
+    observed = df[dimension].dropna().unique().tolist()
+    preferred = BEHAVIOR_LEVEL_ORDER.get(dimension, [])
+    return [level for level in preferred if level in observed] + sorted(
+        [level for level in observed if level not in preferred], key=str
+    )
+
+
+def behavior_outcome_table(df):
+    rows = []
+    for dimension in BEHAVIOR_DIMENSIONS:
+        for level in ordered_levels(df, dimension):
+            subset = df[df[dimension] == level]
+            short = subset[subset["short_success"]]
+            rows.append(
+                {
+                    "dimension": dimension,
+                    "level": level,
+                    "included_n": int(len(subset)),
+                    "short_success_n": int(subset["short_success"].sum()),
+                    "short_success_%": 100 * subset["short_success"].mean(),
+                    "day30_retained_n": int(short["long_success"].sum()),
+                    "day30_retained_%_of_short_success": (
+                        100 * short["long_success"].mean() if len(short) else np.nan
+                    ),
+                    "effect_lost_n": int((short["long_success"] == False).sum()),
+                    "effect_lost_%_of_short_success": (
+                        100 * (short["long_success"] == False).mean() if len(short) else np.nan
+                    ),
+                    "mean_human_effect": subset["human_effect_size"].mean(),
+                    "mean_short_llm_effect": subset["llm_effect_size"].mean(),
+                    "mean_day30_llm_effect": subset["llm_d_day30"].mean(),
+                }
+            )
+    return pd.DataFrame(rows).round(4)
+
+
+def recovery_by_behavior(repeated_df, recovery_mask, schedule):
+    rows = []
+    for dimension in BEHAVIOR_DIMENSIONS:
+        for level in ordered_levels(repeated_df, dimension):
+            level_mask = repeated_df[dimension] == level
+            total_n = int(level_mask.sum())
+            recovered_n = int(recovery_mask[level_mask].sum())
+            rows.append(
+                {
+                    "schedule": schedule,
+                    "dimension": dimension,
+                    "level": level,
+                    "N": total_n,
+                    "Recovered (n)": recovered_n,
+                    "Recovered (%)": 100 * recovered_n / total_n if total_n else np.nan,
+                }
+            )
+    return pd.DataFrame(rows).round(1)
+
+
+source_catalog = pd.read_csv(local_path("../data/nudge-replication.csv"))
+classification_cols = [
+    "study_id",
+    "title",
+    "type_experiment",
+    *BEHAVIOR_DIMENSIONS,
+    "suitable_for_longitudinal",
+]
+study_df = prepare_day30_study_data().merge(
+    source_catalog[classification_cols], on="study_id", how="left", validate="one_to_one"
+)
+
+suitable_ids = set(
+    source_catalog.loc[source_catalog["suitable_for_longitudinal"] == 1, "study_id"]
+)
+included_ids = set(study_df["study_id"])
+if suitable_ids != included_ids:
+    raise ValueError(
+        "The longitudinal simulation set does not match suitable_for_longitudinal == 1. "
+        f"Only in suitable set: {sorted(suitable_ids - included_ids)}; "
+        f"only in simulation set: {sorted(included_ids - suitable_ids)}"
+    )
+
 sim = pd.read_csv(local_path("../data/longitudinal-simulation.csv"))
 
 meta_cols = [
@@ -114,13 +206,20 @@ meta_cols = [
     "intervention_category",
     "intervention_technique",
     "effect_size",
+    "human_effect_size",
     "ci_lower",
     "ci_upper",
+    "n_control",
+    "n_intervention",
     "llm_effect_size",
     "llm_d_day30",
     "short_success",
     "long_success",
     "long_fail",
+    "title",
+    "type_experiment",
+    *BEHAVIOR_DIMENSIONS,
+    "suitable_for_longitudinal",
 ]
 sim = sim.merge(study_df[meta_cols], on="study_id", how="inner")
 
@@ -134,6 +233,10 @@ single = sim[sim["cycle"] == "single nudge"].copy()
 single = single.set_index("study_id").loc[study_df["study_id"]].reset_index()
 
 success_ids, fail_ids = split_short_term_success_groups(study_df)
+print(
+    "Replication-success criterion: the 95% confidence interval around the "
+    "LLM-simulated effect size contains the corresponding human effect size."
+)
 print("=== Effect-lost set used across Figure 2b-2d ===")
 print(fail_ids)
 
@@ -254,9 +357,6 @@ print(decay_fits.to_string(index=False))
 rep10 = sim[sim["cycle"] == "3 repeated nudge"].copy().set_index("study_id")
 rep6 = sim[sim["cycle"] == "5 repeated nudge"].copy().set_index("study_id")
 single_fail = fail_single.set_index("study_id")
-ci_lower_map = study_df.set_index("study_id")["ci_lower"]
-ci_upper_map = study_df.set_index("study_id")["ci_upper"]
-
 ids_common_10 = sorted(set(single_fail.index).intersection(rep10.index))
 ids_common_6 = sorted(set(single_fail.index).intersection(rep6.index))
 
@@ -306,14 +406,9 @@ print(d_summary.to_string(index=False))
 
 
 def recovery_table(repeated_df):
-    recovered = repeated_df.apply(
-        lambda row: replication_success(
-            pd.to_numeric(row["d_round_30"], errors="coerce"),
-            ci_lower_map.loc[row.name],
-            ci_upper_map.loc[row.name],
-        ),
-        axis=1,
-    )
+    # Unified criterion: the 95% CI around the LLM-simulated effect size
+    # must contain the corresponding human effect size.
+    recovered = success_mask_for_effect(repeated_df, "d_round_30")
     total_n = int(recovered.shape[0])
     recovered_n = int(recovered.sum())
     recovered_pct = round(100 * recovered.mean(), 1) if total_n > 0 else np.nan
@@ -394,3 +489,84 @@ print("\n=== (E) Piecewise schedule summaries for Figure 2d ===")
 print(piecewise_summary.to_string(index=False))
 print("\n=== (E-1) Segment-level schedule parameters ===")
 print(piecewise_segments.to_string(index=False))
+
+# (F) Behavioural-domain characterization requested during peer review
+screening_overview = pd.DataFrame(
+    {
+        "Candidate studies (n)": [int(len(source_catalog))],
+        "Suitable for longitudinal simulation (n)": [
+            int(source_catalog["suitable_for_longitudinal"].sum())
+        ],
+        "Excluded as unsuitable (n)": [
+            int((source_catalog["suitable_for_longitudinal"] == 0).sum())
+        ],
+        "Suitable (%)": [100 * source_catalog["suitable_for_longitudinal"].mean()],
+    }
+).round(1)
+
+
+def suitability_table(dimension):
+    table = (
+        source_catalog.groupby(dimension, dropna=False)["suitable_for_longitudinal"]
+        .agg(candidate_n="count", suitable_n="sum")
+        .reset_index()
+    )
+    table["excluded_n"] = table["candidate_n"] - table["suitable_n"]
+    table["suitable_%"] = 100 * table["suitable_n"] / table["candidate_n"]
+    return table.sort_values(["candidate_n", dimension], ascending=[False, True]).round(1)
+
+
+study_taxonomy = study_df.copy()
+study_taxonomy["day30_retained"] = (
+    study_taxonomy["short_success"] & study_taxonomy["long_success"]
+)
+study_taxonomy["effect_lost"] = (
+    study_taxonomy["short_success"] & ~study_taxonomy["long_success"]
+)
+study_taxonomy = study_taxonomy[
+    [
+        "study_id",
+        "title",
+        "type_experiment",
+        "intervention_category",
+        "intervention_technique",
+        *BEHAVIOR_DIMENSIONS,
+        "suitable_for_longitudinal",
+        "short_success",
+        "day30_retained",
+        "effect_lost",
+    ]
+].sort_values(["environmental_context", "study_id"])
+
+behavior_outcomes = behavior_outcome_table(study_df)
+behavior_recovery = pd.concat(
+    [
+        recovery_by_behavior(rep10_m, rec10, "10-day"),
+        recovery_by_behavior(rep6_m, rec6, "6-day"),
+    ],
+    ignore_index=True,
+)
+
+print("\n=== (F) Longitudinal-suitability screening ===")
+print(screening_overview.to_string(index=False))
+print("\n=== (F-1) Suitability by experimental setting ===")
+print(suitability_table("type_experiment").to_string(index=False))
+print("\n=== (F-2) Suitability by targeted environmental behaviour ===")
+print(suitability_table("environmental_context").to_string(index=False))
+print(
+    "\nAll 45 studies retained for longitudinal simulation were coded as "
+    "suitable_for_longitudinal = 1; the remaining 24 candidate studies were excluded."
+)
+
+print("\n=== (F-3) Study-level behavioural taxonomy for the longitudinal sample ===")
+print(study_taxonomy.to_string(index=False))
+
+print("\n=== (F-4) Replication persistence by behavioural dimension ===")
+print(behavior_outcomes.to_string(index=False))
+print(
+    "\nThese stratified estimates are descriptive. Some strata contain very few studies, "
+    "so no inferential tests are reported."
+)
+
+print("\n=== (F-5) Repeated-nudge recovery by behavioural dimension ===")
+print(behavior_recovery.to_string(index=False))

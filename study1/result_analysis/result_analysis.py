@@ -15,17 +15,21 @@ def read_csv_robust(path):
 
 df = read_csv_robust("../data/nudge-replication.csv")
 
-# 95% two-sided confidence interval
+# A replication is successful when the LLM 95% confidence interval
+# contains the corresponding human effect-size estimate.
 def success_mask(df, model_prefix):
     d_col = f"{model_prefix}_llm_effect_size"
     p_col = f"{model_prefix}_llm_p_value"
+    ci_lower_col = f"{model_prefix}_llm_ci_lower"
+    ci_upper_col = f"{model_prefix}_llm_ci_upper"
 
     d = pd.to_numeric(df[d_col], errors="coerce")
     p = pd.to_numeric(df[p_col], errors="coerce")
-    ci_lower = pd.to_numeric(df["ci_lower"], errors="coerce")
-    ci_upper = pd.to_numeric(df["ci_upper"], errors="coerce")
+    human_d = pd.to_numeric(df["effect_size"], errors="coerce")
+    llm_ci_lower = pd.to_numeric(df[ci_lower_col], errors="coerce")
+    llm_ci_upper = pd.to_numeric(df[ci_upper_col], errors="coerce")
 
-    success = (d >= ci_lower) & (d <= ci_upper)
+    success = (llm_ci_lower <= human_d) & (human_d <= llm_ci_upper)
 
     return success, d, p
 
@@ -69,6 +73,26 @@ def mad(values):
     if values.empty:
         return np.nan
     return float(np.median(np.abs(values - np.median(values))))
+
+
+def benjamini_hochberg(p_values):
+    """Return BH-adjusted p values while preserving missing values and order."""
+    p_values = np.asarray(p_values, dtype=float)
+    adjusted = np.full(p_values.shape, np.nan, dtype=float)
+    valid = np.isfinite(p_values)
+    if not valid.any():
+        return adjusted
+
+    p = p_values[valid]
+    order = np.argsort(p)
+    ranked = p[order] * len(p) / np.arange(1, len(p) + 1)
+    ranked = np.minimum.accumulate(ranked[::-1])[::-1]
+    ranked = np.clip(ranked, 0.0, 1.0)
+
+    adjusted_valid = np.empty_like(ranked)
+    adjusted_valid[order] = ranked
+    adjusted[valid] = adjusted_valid
+    return adjusted
 
 
 def chi_square_summary(ct):
@@ -761,6 +785,10 @@ for mkey, mname in models.items():
 
 success_df = pd.DataFrame(success_summary)
 add("=== Overall Success Summary ===")
+add(
+    "Replication success criterion: the model-specific LLM 95% confidence interval "
+    "contains the corresponding human effect-size estimate."
+)
 add(success_df.to_string(index=False))
 add()
 
@@ -885,7 +913,26 @@ for mkey, mname in models.items():
     cor_rows.append({"Model": mname, "r": r, "p": p, "N": int(mask.sum())})
 
 cor_df = pd.DataFrame(cor_rows)
+cor_df = cor_df.rename(columns={"p": "p (raw)"})
+cor_df["p (BH-adjusted, six models)"] = benjamini_hochberg(cor_df["p (raw)"])
+cor_df["BH significant (adjusted p < 0.05)"] = (
+    cor_df["p (BH-adjusted, six models)"] < 0.05
+)
+cor_df = cor_df[
+    [
+        "Model",
+        "r",
+        "p (raw)",
+        "p (BH-adjusted, six models)",
+        "BH significant (adjusted p < 0.05)",
+        "N",
+    ]
+]
 add("=== Pearson Correlation: LLM effect size vs Human effect size ===")
+add(
+    "The six two-sided Pearson correlation p values were adjusted together using "
+    "the Benjamini-Hochberg procedure."
+)
 add(cor_df.to_string(index=False))
 add()
 

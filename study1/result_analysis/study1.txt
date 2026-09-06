@@ -1,9 +1,10 @@
 === Overall Success Summary ===
+Replication success criterion: the model-specific LLM 95% confidence interval contains the corresponding human effect-size estimate.
                   Model  N (evaluable)  Success (n)  Success rate (%)
                 GPT-3.5             69           43              62.3
-                 GPT-4o             69           50              72.5
+                 GPT-4o             69           48              69.6
        Claude-4.5-Haiku             69           41              59.4
-            DeepSeek-V3             69           48              69.6
+            DeepSeek-V3             69           47              68.1
 DeepSeek-V4-Flash-Think             69           53              76.8
           GPT-5.4-Think             69           43              62.3
 
@@ -15,10 +16,10 @@ Failure (26):
 Broman_2, Bruns_1, Camilleri_1, Demarque_1, Demarque_2, Demarque_3, Demarque_4, Demarque_5, Demarque_7, Demarque_8, Dickerson_2, Ebeling_1, Ebeling_2, Hedlin_1, Hedlin_2, Hilton_1, Kesternich_1, Klotz_1, Klotz_2, Kuester_1, Larrick_1, Lofgren_1, Mertens_4, Rosenkranz_1, Shealy_3, Yeomans_1
 
 --- GPT-4o ---
-Success (50):
-Arana_1, Bamberg_2, Bohm_1, Broman_1, Broman_3, Bruns_1, Camilleri_3, Camilleri_4, Catlin_1, Chabeferret_1, Demarque_1, Demarque_2, Demarque_3, Demarque_5, Demarque_6, Dickerson_1, Dickerson_2, Dinner_1, Dinner_2, Dinner_3, Everett_1, Gong_1, Handgraaf_1, Hedlin_1, Hershfield_1, Kuester_1, Kuester_2, Larrick_1, Lofgren_2, Marek_1, McCaul_1, McCaul_2, Meng_1, Mertens_1, Mertens_2, Mertens_3, Mertens_4, Mertens_5, Nelson_1, Nelson_2, Nelson_3, Pichert_1, Pichert_2, Shealy_1, Shealy_2, Stikvoort_1, Theotokis_1, Theotokis_2, Yeomans_2, Yeomans_3
-Failure (19):
-Bamberg_1, Bamberg_3, Broman_2, Camilleri_1, Camilleri_2, Demarque_4, Demarque_7, Demarque_8, Ebeling_1, Ebeling_2, Hedlin_2, Hilton_1, Kesternich_1, Klotz_1, Klotz_2, Lofgren_1, Rosenkranz_1, Shealy_3, Yeomans_1
+Success (48):
+Arana_1, Bamberg_2, Bohm_1, Broman_1, Broman_3, Bruns_1, Camilleri_3, Camilleri_4, Chabeferret_1, Demarque_1, Demarque_2, Demarque_3, Demarque_5, Demarque_6, Dickerson_1, Dickerson_2, Dinner_1, Dinner_2, Everett_1, Gong_1, Handgraaf_1, Hedlin_1, Hershfield_1, Kuester_1, Kuester_2, Larrick_1, Lofgren_2, Marek_1, McCaul_1, McCaul_2, Meng_1, Mertens_1, Mertens_2, Mertens_3, Mertens_4, Mertens_5, Nelson_1, Nelson_2, Nelson_3, Pichert_1, Pichert_2, Shealy_1, Shealy_2, Stikvoort_1, Theotokis_1, Theotokis_2, Yeomans_2, Yeomans_3
+Failure (21):
+Bamberg_1, Bamberg_3, Broman_2, Camilleri_1, Camilleri_2, Catlin_1, Demarque_4, Demarque_7, Demarque_8, Dinner_3, Ebeling_1, Ebeling_2, Hedlin_2, Hilton_1, Kesternich_1, Klotz_1, Klotz_2, Lofgren_1, Rosenkranz_1, Shealy_3, Yeomans_1
 
 --- Claude-4.5-Haiku ---
 Success (41):
@@ -27,10 +28,10 @@ Failure (28):
 Bamberg_1, Bamberg_3, Broman_2, Bruns_1, Demarque_4, Demarque_8, Dickerson_1, Ebeling_1, Ebeling_2, Handgraaf_1, Hedlin_1, Hedlin_2, Hilton_1, Kesternich_1, Klotz_1, Klotz_2, Larrick_1, Lofgren_1, Lofgren_2, McCaul_1, McCaul_2, Meng_1, Mertens_1, Rosenkranz_1, Shealy_2, Shealy_3, Stikvoort_1, Yeomans_3
 
 --- DeepSeek-V3 ---
-Success (48):
-Arana_1, Bamberg_1, Bamberg_2, Bamberg_3, Bohm_1, Broman_1, Broman_3, Camilleri_2, Camilleri_3, Camilleri_4, Catlin_1, Chabeferret_1, Demarque_1, Demarque_2, Demarque_3, Demarque_5, Demarque_6, Dinner_1, Dinner_2, Dinner_3, Everett_1, Gong_1, Handgraaf_1, Hedlin_1, Hershfield_1, Kuester_1, Kuester_2, Larrick_1, Lofgren_1, Lofgren_2, Marek_1, McCaul_1, Meng_1, Mertens_1, Mertens_2, Mertens_3, Mertens_4, Mertens_5, Nelson_1, Nelson_2, Nelson_3, Pichert_2, Shealy_1, Stikvoort_1, Theotokis_1, Theotokis_2, Yeomans_2, Yeomans_3
-Failure (21):
-Broman_2, Bruns_1, Camilleri_1, Demarque_4, Demarque_7, Demarque_8, Dickerson_1, Dickerson_2, Ebeling_1, Ebeling_2, Hedlin_2, Hilton_1, Kesternich_1, Klotz_1, Klotz_2, McCaul_2, Pichert_1, Rosenkranz_1, Shealy_2, Shealy_3, Yeomans_1
+Success (47):
+Arana_1, Bamberg_1, Bamberg_2, Bamberg_3, Bohm_1, Broman_1, Broman_3, Camilleri_2, Camilleri_3, Camilleri_4, Catlin_1, Chabeferret_1, Demarque_1, Demarque_2, Demarque_3, Demarque_5, Demarque_6, Dinner_1, Dinner_2, Dinner_3, Everett_1, Gong_1, Handgraaf_1, Hedlin_1, Hershfield_1, Kuester_2, Larrick_1, Lofgren_1, Lofgren_2, Marek_1, McCaul_1, Meng_1, Mertens_1, Mertens_2, Mertens_3, Mertens_4, Mertens_5, Nelson_1, Nelson_2, Nelson_3, Pichert_2, Shealy_1, Stikvoort_1, Theotokis_1, Theotokis_2, Yeomans_2, Yeomans_3
+Failure (22):
+Broman_2, Bruns_1, Camilleri_1, Demarque_4, Demarque_7, Demarque_8, Dickerson_1, Dickerson_2, Ebeling_1, Ebeling_2, Hedlin_2, Hilton_1, Kesternich_1, Klotz_1, Klotz_2, Kuester_1, McCaul_2, Pichert_1, Rosenkranz_1, Shealy_2, Shealy_3, Yeomans_1
 
 --- DeepSeek-V4-Flash-Think ---
 Success (53):
@@ -46,28 +47,28 @@ Broman_2, Camilleri_1, Camilleri_2, Demarque_1, Demarque_3, Demarque_4, Demarque
 
 === Reasoning vs Non-reasoning Summary ===
   Model group  Success rate (%)  Success (n)  N (evaluable)
-Non-reasoning             65.95         45.5           69.0
-    Reasoning             69.55         48.0           69.0
+Non-reasoning             64.85        44.75           69.0
+    Reasoning             69.55        48.00           69.0
 
 === Paired success comparison: non-reasoning vs reasoning model groups ===
 For each study, success was averaged within non-reasoning and reasoning model groups, then compared using paired tests.
  N studies  Mean non-reasoning success  Mean reasoning success  Mean paired difference  Paired t  Paired p  Wilcoxon W  Wilcoxon p
-        69                       0.659                   0.696                  -0.036    -1.043  0.300532       199.5    0.328355
+        69                       0.649                   0.696                  -0.047    -1.327  0.188877       211.5    0.204873
 
 === Success Rate by effect_label ===
                   Model  effect_label  N  Success (n)  Success rate (%)
                 GPT-3.5            -1  3            3             100.0
                 GPT-3.5             0  4            3              75.0
                 GPT-3.5             1 62           37              59.7
-                 GPT-4o            -1  3            3             100.0
+                 GPT-4o            -1  3            2              66.7
                  GPT-4o             0  4            3              75.0
-                 GPT-4o             1 62           44              71.0
+                 GPT-4o             1 62           43              69.4
        Claude-4.5-Haiku            -1  3            2              66.7
        Claude-4.5-Haiku             0  4            1              25.0
        Claude-4.5-Haiku             1 62           38              61.3
             DeepSeek-V3            -1  3            3             100.0
             DeepSeek-V3             0  4            3              75.0
-            DeepSeek-V3             1 62           42              67.7
+            DeepSeek-V3             1 62           41              66.1
 DeepSeek-V4-Flash-Think            -1  3            3             100.0
 DeepSeek-V4-Flash-Think             0  4            3              75.0
 DeepSeek-V4-Flash-Think             1 62           47              75.8
@@ -101,21 +102,22 @@ intervention_category intervention_technique  effect_label  N
 
 === Mean Success Rate by effect_label and model group ===
   Model group  effect_label  Success rate (%)  Success (n)    N
-Non-reasoning            -1            91.675         2.75  3.0
+Non-reasoning            -1            83.350         2.50  3.0
 Non-reasoning             0            62.500         2.50  4.0
-Non-reasoning             1            64.925        40.25 62.0
+Non-reasoning             1            64.125        39.75 62.0
     Reasoning            -1           100.000         3.00  3.0
     Reasoning             0            62.500         2.50  4.0
     Reasoning             1            68.550        42.50 62.0
 
 === Pearson Correlation: LLM effect size vs Human effect size ===
-                  Model        r        p  N
-                GPT-3.5 0.332642 0.005228 69
-                 GPT-4o 0.428914 0.000236 69
-       Claude-4.5-Haiku 0.247756 0.040118 69
-            DeepSeek-V3 0.352908 0.002937 69
-DeepSeek-V4-Flash-Think 0.438195 0.000166 69
-          GPT-5.4-Think 0.405021 0.000556 69
+The six two-sided Pearson correlation p values were adjusted together using the Benjamini-Hochberg procedure.
+                  Model        r  p (raw)  p (BH-adjusted, six models)  BH significant (adjusted p < 0.05)  N
+                GPT-3.5 0.332642 0.005228                     0.006273                                True 69
+                 GPT-4o 0.428914 0.000236                     0.000708                                True 69
+       Claude-4.5-Haiku 0.247756 0.040118                     0.040118                                True 69
+            DeepSeek-V3 0.352908 0.002937                     0.004406                                True 69
+DeepSeek-V4-Flash-Think 0.438195 0.000166                     0.000708                                True 69
+          GPT-5.4-Think 0.405021 0.000556                     0.001113                                True 69
 
 === Paired t-test: LLM effect size vs Human effect size ===
                   Model  Mean difference (LLM - Human)         t        p  N
@@ -201,13 +203,13 @@ DeepSeek-V4-Flash-Think   structure      composition  2            2            
             DeepSeek-V3   structure      consequence  1            1             100.0
 DeepSeek-V4-Flash-Think   structure      consequence  1            1             100.0
                 GPT-3.5   structure      consequence  1            1             100.0
-                 GPT-4o   structure      consequence  1            1             100.0
+                 GPT-4o   structure      consequence  1            0               0.0
           GPT-5.4-Think   structure      consequence  1            1             100.0
        Claude-4.5-Haiku   structure          default 29           17              58.6
-            DeepSeek-V3   structure          default 29           19              65.5
+            DeepSeek-V3   structure          default 29           18              62.1
 DeepSeek-V4-Flash-Think   structure          default 29           23              79.3
                 GPT-3.5   structure          default 29           18              62.1
-                 GPT-4o   structure          default 29           21              72.4
+                 GPT-4o   structure          default 29           20              69.0
           GPT-5.4-Think   structure          default 29           20              69.0
        Claude-4.5-Haiku   structure           effort  1            0               0.0
             DeepSeek-V3   structure           effort  1            0               0.0
